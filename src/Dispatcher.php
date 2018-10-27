@@ -16,6 +16,7 @@ class Dispatcher
         $map = [
             'GET /' => 'ping',
             'GET /ping' => 'ping',
+            'GET /user' => 'user'
         ];
 
         $route = "$method $uri";

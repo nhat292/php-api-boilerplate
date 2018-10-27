@@ -14,17 +14,23 @@ try {
     $command = $dispatcher->dispatch($_SERVER['REQUEST_URI'], $_SERVER['REQUEST_METHOD']);
     $response = $command->execute();
 
-} catch (Exception\NoMatchingRoute $e) {
+} 
+catch (Exception\NoMatchingRoute $e) 
+{
 
     $statusMsg = $e->getMessage() ?: 'WAT?';
     $statusCode = $e->getCode();
 
-} catch (\Exception $e) {
+} 
+catch (\Exception $e) 
+{
 
     $statusMsg = $e->getMessage() ?: 'No soup for you!';
     $statusCode = $e->getCode() ?: 500;
 
-} finally {
+} 
+finally 
+{
 
     header("HTTP/1.1 $statusCode $statusMsg");
     header('Content-Type: application/json');

@@ -2,7 +2,7 @@
 
 namespace PhpApi\Command;
 
-class Ping
+class Ping extends BaseCommand
 {
     public function execute()
     {
